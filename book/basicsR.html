@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Κεφάλαιο 3 Τα Βασικά Στοιχεία της R | Εισαγωγή στην γλώσσα R για Κοινωνικές Επιστήμες</title>
+  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Κεφάλαιο 3 Τα Βασικά Στοιχεία της R | Εισαγωγή στην γλώσσα R για Κοινωνικές Επιστήμες" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Κεφάλαιο 3 Τα Βασικά Στοιχεία της R | Εισαγωγή στην γλώσσα R για Κοινωνικές Επιστήμες" />
+  
+  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Παναγιώτης Μιχαηλίδης" />
+
+
+<meta name="date" content="2021-04-05" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="-.html"/>
+<link rel="next" href="applications.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Εισαγωγή στην γλώσσα R για Κοινωνικές Επιστήμες</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Πρόλογος</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Εισαγωγή</a></li>
+<li class="chapter" data-level="2" data-path="-.html"><a href="-.html"><i class="fa fa-check"></i><b>2</b> Υπολογιστικό Περιβάλλον Εργασίας</a></li>
+<li class="chapter" data-level="3" data-path="basicsR.html"><a href="basicsR.html"><i class="fa fa-check"></i><b>3</b> Τα Βασικά Στοιχεία της R</a><ul>
+<li class="chapter" data-level="3.1" data-path="basicsR.html"><a href="basicsR.html#αντικείμενα"><i class="fa fa-check"></i><b>3.1</b> Αντικείμενα</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="basicsR.html"><a href="basicsR.html#ατομικές-κλάσεις-αντικειμένων"><i class="fa fa-check"></i><b>3.1.1</b> Ατομικές Κλάσεις Αντικειμένων</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="basicsR.html"><a href="basicsR.html#τελεστές"><i class="fa fa-check"></i><b>3.2</b> Τελεστές</a></li>
+<li class="chapter" data-level="3.3" data-path="basicsR.html"><a href="basicsR.html#συναρτήσεις"><i class="fa fa-check"></i><b>3.3</b> Συναρτήσεις</a></li>
+<li class="chapter" data-level="3.4" data-path="basicsR.html"><a href="basicsR.html#μεταβλητές"><i class="fa fa-check"></i><b>3.4</b> Μεταβλητές</a></li>
+<li class="chapter" data-level="3.5" data-path="basicsR.html"><a href="basicsR.html#σύνθετες-κλάσεις-αντικειμένων"><i class="fa fa-check"></i><b>3.5</b> Σύνθετες Κλάσεις Αντικειμένων</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="basicsR.html"><a href="basicsR.html#διανύσματα"><i class="fa fa-check"></i><b>3.5.1</b> Διανύσματα</a></li>
+<li class="chapter" data-level="3.5.2" data-path="basicsR.html"><a href="basicsR.html#πίνακες"><i class="fa fa-check"></i><b>3.5.2</b> Πίνακες</a></li>
+<li class="chapter" data-level="3.5.3" data-path="basicsR.html"><a href="basicsR.html#πλαίσια-δεδομένων"><i class="fa fa-check"></i><b>3.5.3</b> Πλαίσια Δεδομένων</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="basicsR.html"><a href="basicsR.html#συναρτήσεις-γραφικών"><i class="fa fa-check"></i><b>3.6</b> Συναρτήσεις Γραφικών</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="basicsR.html"><a href="basicsR.html#ραβδόγραμμα"><i class="fa fa-check"></i><b>3.6.1</b> Ραβδόγραμμα</a></li>
+<li class="chapter" data-level="3.6.2" data-path="basicsR.html"><a href="basicsR.html#κυκλικό-διάγραμμα-ή-πίτα"><i class="fa fa-check"></i><b>3.6.2</b> Κυκλικό διάγραμμα ή Πίτα</a></li>
+<li class="chapter" data-level="3.6.3" data-path="basicsR.html"><a href="basicsR.html#ιστόγραμμα"><i class="fa fa-check"></i><b>3.6.3</b> Ιστόγραμμα</a></li>
+<li class="chapter" data-level="3.6.4" data-path="basicsR.html"><a href="basicsR.html#διάγραμμα-διασποράς"><i class="fa fa-check"></i><b>3.6.4</b> Διάγραμμα διασποράς</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a><ul>
+<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
+<li class="chapter" data-level="4.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Εισαγωγή στην γλώσσα R για Κοινωνικές Επιστήμες</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="basicsR" class="section level1">
+<h1><span class="header-section-number">Κεφάλαιο 3</span> Τα Βασικά Στοιχεία της R</h1>
+<p>H R είναι μια <em>αντικειμενοστρεφής γλώσσα προγραμματισμού</em> και βασίζεται σε δυο αρχές. Η πρώτη αρχή λέει ότι όλες οι οντότητες που παρουσιάζονται στην R όπως δεδομένα, μεταβλητές, μοντέλα, κ.λπ. είναι <strong>αντικείμενα</strong>. Η δεύτερη αρχή λέει ότι οτιδήποτε εφαρμόζεται σε ένα αντικείμενο είναι μια πράξη αντικειμένου η οποία μπορεί να υλοποιηθεί μέσω <strong>τελεστών</strong> ή <strong>συναρτήσεων</strong>.</p>
+<div id="αντικείμενα" class="section level2">
+<h2><span class="header-section-number">3.1</span> Αντικείμενα</h2>
+<p>Η βασική μονάδα δεδομένων σε ένα πρόγραμμα είναι η <strong>τιμή</strong> και αυτή θεωρείται αντικείμενο. Κάθε αντικείμενο ανήκει σε μια κλάση ή τύπος δεδομένων. Στην R έχουμε δύο κατηγορίες κλάσεων αντικειμένων: οι <strong>ατομικές</strong> και οι <strong>σύνθετες</strong> κλάσεις δεδομένων. Σε αυτή την ενότητα θα δούμε τις ατομικές κλάσεις αντικειμένων και σε επόμενη ενότητα θα δούμε τις σύνθετες κλάσεις αντικειμένων.</p>
+<div id="ατομικές-κλάσεις-αντικειμένων" class="section level3">
+<h3><span class="header-section-number">3.1.1</span> Ατομικές Κλάσεις Αντικειμένων</h3>
+<p>Οι ατομικές κλάσεις δεδομένων (ή αλλιώς σύντομα θα τα λέμε βασικά αντικείμενα) είναι τα αντικείμενα εκείνα που φιλοξενούν μια μόνο τιμή. Στην R υπάρχουν τέσσερις βασικές κλάσεις αντικειμένων: αριθμητικές τιμές, αλφαριθμητικά ή χαρακτήρες κειμένου, λογικές τιμές και παράγοντες.</p>
+<p>Οι αριθμητικές τιμές στην R μπορεί να είναι <strong>ακέραιοι αριθμοί</strong> ή <strong>πραγματικοί αριθμοί</strong>. Οι ακέραιοι αριθμοί μπορεί να είναι οι θετικοί ή αρνητικοί αριθμοί χωρίς την υποδιαστολή ενώ οι πραγματικοί αριθμοί είναι οι θετικοί ή αρνητικοί αριθμοί που έχουν μια υποδιαστολή. Για παράδειγμα, αν πληκτρολογήσουμε τις παρακάτω αριθμητικές τιμές στην κονσόλα</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="dv">4</span></a></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="dv">0</span></a></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="dv">-5</span></a></code></pre></div>
+<pre><code>## [1] -5</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="fl">1.1</span></a></code></pre></div>
+<pre><code>## [1] 1.1</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1"><span class="fl">-2.344</span></a></code></pre></div>
+<pre><code>## [1] -2.344</code></pre>
+<p>τότε επιστρέφονται οι ίδιες οι τιμές ως αντικείμενα αριθμών.</p>
+<p>Οι <strong>χαρακτήρες κειμένου</strong> στην R είναι μια σειρά αλφαριθμητικών χαρακτήρων που περικλείεται μέσα σε μονά ή διπλά εισαγωγικά. Για παράδειγμα, αν πληκτρολογήσουμε τις παρακάτω τιμές στην κονσόλα</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="st">&#39;γλώσσα R&#39;</span></a></code></pre></div>
+<pre><code>## [1] &quot;γλώσσα R&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="st">&quot;computer 2520&quot;</span></a></code></pre></div>
+<pre><code>## [1] &quot;computer 2520&quot;</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="st">&#39;2021&#39;</span></a></code></pre></div>
+<pre><code>## [1] &quot;2021&quot;</code></pre>
+<p>τότε οι επιστρέφονται οι ίδιες οι τιμές ως αντικείμενα χαρακτήρων κειμένου.</p>
+<p>Οι <strong>λογικές τιμές</strong> στην R μπορεί να είναι <code>TRUE</code> ή <code>FALSE</code> που σημαίνουν αληθής ή ψευδής αντίστοιχα. Για παράδειγμα, αν πληκτρολογήσουμε τις παρακάτω τιμές στην κονσόλα</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1"><span class="ot">TRUE</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1">T</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="ot">FALSE</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1">F</a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<p>τότε οι επιστρέφονται οι ίδιες οι τιμές ως αντικείμενα λογικών. Από τα παραπάνω προκύπτει ότι η τιμή <code>T</code> μπορεί να χρησιμοποιηθεί και θεωρείται ισοδύναμη με την τιμή <code>TRUE</code>. Με παρόμοιο τρόπο ισχύει για την τιμή <code>F</code>.</p>
+</div>
+</div>
+<div id="τελεστές" class="section level2">
+<h2><span class="header-section-number">3.2</span> Τελεστές</h2>
+<p>Kάθε ένα από τα βασικά αντικείμενα που είδαμε προηγουμένως, μπορεί να εφαρμοστεί το δικό της σύνολο επιτρεπτών πράξεων. Οι πράξεις μεταξύ των αντικειμένων γίνονται με την χρήση των τελεστών και τα αποτελέσματα των πράξεων είναι νέα αντικείμενα. Τα αντικείμενα αριθμοί έχουν νόημα οι γνωστές αριθμητικές πράξεις που γίνονται με την βοήθεια των ακόλουθων <strong>αριθμητικών τελεστών</strong>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Τελεστής</th>
+<th align="left">Περιγραφή</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">+</td>
+<td align="left">πρόσθεση</td>
+</tr>
+<tr class="even">
+<td align="left">-</td>
+<td align="left">αφαίρεση</td>
+</tr>
+<tr class="odd">
+<td align="left">*</td>
+<td align="left">πολλαπλασιασμός</td>
+</tr>
+<tr class="even">
+<td align="left">/</td>
+<td align="left">διαίρεση</td>
+</tr>
+<tr class="odd">
+<td align="left">^ ή **</td>
+<td align="left">ύψωση σε δύναμη</td>
+</tr>
+<tr class="even">
+<td align="left">%%</td>
+<td align="left">ακέραιο υπόλοιπο</td>
+</tr>
+<tr class="odd">
+<td align="left">%/%</td>
+<td align="left">ακέραια διαίρεση</td>
+</tr>
+</tbody>
+</table>
+<p>Παρακάτω παρουσιάζονται ορισμένα παραδείγματα αριθμητικών πράξεων:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" title="1"><span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" title="1"><span class="fl">3.01</span> <span class="op">-</span><span class="st"> </span><span class="fl">2.55</span></a></code></pre></div>
+<pre><code>## [1] 0.46</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" title="1"><span class="dv">3</span> <span class="op">*</span><span class="st"> </span><span class="fl">4.1</span></a></code></pre></div>
+<pre><code>## [1] 12.3</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1"><span class="dv">81</span> <span class="op">/</span><span class="st"> </span><span class="dv">9</span></a></code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb35-1" title="1"><span class="dv">2</span><span class="op">^</span><span class="dv">3</span></a></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb37-1" title="1"><span class="dv">100</span> <span class="op">%%</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1"><span class="dv">100</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<pre><code>## [1] 20</code></pre>
+<p>Eπίσης, τα αντικείμενα αριθμοί έχουν νόημα οι συγκρίσεις που γίνονται με την βοήθεια των παρακάτω <strong>συγκριτικών τελεστών</strong>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Τελεστής</th>
+<th align="left">Περιγραφή</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">&lt;</td>
+<td align="left">μικρότερο</td>
+</tr>
+<tr class="even">
+<td align="left">&lt;=</td>
+<td align="left">μικρότερο ή ίσο</td>
+</tr>
+<tr class="odd">
+<td align="left">&gt;</td>
+<td align="left">μεγαλύτερο</td>
+</tr>
+<tr class="even">
+<td align="left">&gt;=</td>
+<td align="left">μεγαλύτερο ή ίσο</td>
+</tr>
+<tr class="odd">
+<td align="left">==</td>
+<td align="left">ίσο ή ισότητα</td>
+</tr>
+<tr class="even">
+<td align="left">!=</td>
+<td align="left">διάφορο</td>
+</tr>
+</tbody>
+</table>
+<p>Όταν συγκρίνουμε δύο ποσότητες, το αποτέλεσμα που επιστρέφει είναι ένα αντικείμενο λογικού τύπου δηλαδή <code>TRUE</code> ή <code>FALSE</code>. Παρακάτω παρουσιάζονται ορισμένα παραδείγματα συγκρίσεων:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb41-1" title="1"><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb43-1" title="1"><span class="fl">10.5</span> <span class="op">&lt;</span><span class="st"> </span><span class="fl">20.99</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb45-1" title="1"><span class="dv">5</span> <span class="op">==</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb47-1" title="1"><span class="dv">-2</span> <span class="op">!=</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Πολλές φορές, χρησιμοποιούμε συνδυάσουμε εκφράσεις για να πάρουμε αποφάσεις. Αυτές οι εκφράσεις συνδυάζονται με την βοήθεια των παρακάτω <strong>λογικών τελεστών</strong>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Τελεστής</th>
+<th align="left">Περιγραφή</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">&amp;</td>
+<td align="left">λογικό ΚΑΙ</td>
+</tr>
+<tr class="even">
+<td align="left">|</td>
+<td align="left">λογικό Η</td>
+</tr>
+<tr class="odd">
+<td align="left">!</td>
+<td align="left">άρνηση</td>
+</tr>
+</tbody>
+</table>
+<p>Το λογικό ΚΑΙ δίνει αληθής τιμή μόνο όταν και οι δύο εκφράσεις είναι αληθείς. Το λογικό Η δίνει αληθής τιμή όταν μια από τις δύο εκφράσεις είναι αληθείς. Η άρνηση μιας έκφρασης δίνει αληθής τιμή αν η έκφραση είναι ψευδής. Παρακάτω παρουσιάζονται ορισμένα παραδείγματα λογικών τελεστών:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb49-1" title="1"><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span> <span class="op">&amp;</span><span class="st"> </span><span class="dv">5</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb51-1" title="1"><span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span> <span class="op">|</span><span class="st"> </span><span class="dv">5</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">2</span></a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb53-1" title="1"><span class="op">!</span>(<span class="dv">2</span> <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+</div>
+<div id="συναρτήσεις" class="section level2">
+<h2><span class="header-section-number">3.3</span> Συναρτήσεις</h2>
+<p>H base R διαθέτει πολλές ενσωματωμένες συναρτήσεις που μας βοηθούν να κάνουμε διάφορες εργασίες επί των αντικειμένων εύκολα. Oι συναρτήσεις στην R είναι επίσης αντικείμενα και δουλεύουν με το ίδιο τρόπο όπως μάθαμε στο σχολείο. Με άλλα λόγια, κάθε συνάρτηση έχει ένα <strong>όνομα</strong> που <strong>λαμβάνει</strong> ένα αντικείμενο, <strong>υπολογίζει</strong> κάτι και <strong>επιστρέφει</strong> ένα άλλο αντικείμενο.</p>
+<p>Για να χρησιμοποιήσουμε μια συνάρτηση την καλούμε με το όνομα της ακολουθούμενη με τις παρενθέσεις της με την παρακάτω μορφή:</p>
+<pre><code>όνομα_συνάρτησης(όρισμα1, όρισμα2, ...)</code></pre>
+<p>και λέγεται <strong>κλήση της συνάρτησης</strong>. Μέσα τις παρενθέσεις της συνάρτησης περνάμε τα αντικείμενα εισόδου που
+λέγονται <strong>ορίσματα</strong>. Για παράδειγμα, η παρακάτω συνάρτηση</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" title="1"><span class="kw">sqrt</span>(<span class="dv">64</span>)</a></code></pre></div>
+<pre><code>## [1] 8</code></pre>
+<p>επιστρέφει την τετραγωνική ρίζα της τιμής <code>64</code> που είναι <code>8</code>. Η παρακάτω συνάρτηση</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb58-1" title="1"><span class="kw">log</span>(<span class="dv">10</span>)</a></code></pre></div>
+<pre><code>## [1] 2.302585</code></pre>
+<p>επιστρέφει το λογάριθμος της τιμής <code>10</code> που είναι <code>2.30</code>.
+Οι παραπάνω συναρτήσεις που είδαμε είναι <strong>αριθμητικές συναρτήσεις</strong> επειδή λαμβάνουν ως είσοδο αριθμητικά αντικείμενα. Επίσης, η R περιέχει ενσωματωμένες <strong>συναρτήσεων χαρακτήρων κειμένου</strong> που λαμβάνουν ως είσοδο αντικείμενα αλφαριθμητικά. Για παράδειγμα, η συνάρτηση</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb60-1" title="1"><span class="kw">paste</span>(<span class="st">&quot;Good&quot;</span>, <span class="st">&quot;Morning&quot;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;Good Morning&quot;</code></pre>
+<p>επιστρέφει ένα αντικείμενο αλφαριθμητικό που έχει συνενώσει τα δυο αλφαριθμητικά <code>Good</code> και <code>Morning</code> διαχωρισμένα με ένα κενό μεταξύ τους. Επίσης, η συνάρτηση</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1"><span class="kw">toupper</span>(<span class="st">&#39;Good&#39;</span>)</a></code></pre></div>
+<pre><code>## [1] &quot;GOOD&quot;</code></pre>
+<p>επιστρέφει ένα αντικείμενο αλφαριθμητικό σε κεφαλαία γράμματα.</p>
+</div>
+<div id="μεταβλητές" class="section level2">
+<h2><span class="header-section-number">3.4</span> Μεταβλητές</h2>
+<p>Μέχρι τώρα έχουμε δει πράξεις που τα αποτελέσματα ή τα αντικείμενα τους εμφανίζονται μόνο στην κονσόλα. Πολλές φορές είναι χρήσιμο να αποθηκεύουμε τα αντικείμενα αυτά στην μνήμη. Αυτό μπορεί να γίνει με την βοήθεια της μεταβλητής. Η <strong>μεταβλητή</strong> είναι ένα άλλο αντικείμενο για την αποθήκευση τιμών ή αντικειμένων ώστε να χρησιμοποιηθεί για μελλοντική χρήση. Η μεταβλητή δημιουργείται με τη χρήση του τελεστή ανάθεσης <code>&lt;-</code> ή του τελεστή <code>=</code> με την εξής μορφή:</p>
+<pre><code>  όνομα_μεταβλητής &lt;- αντικείμενο</code></pre>
+<p>όπου το όνομα της μεταβλητής μπορεί να είναι συνδυασμός γραμμάτων, αριθμών ή κάτω παύλα (_).
+Για παράδειγμα, αν θέλουμε να αποθηκεύσουμε την ποσότητα προϊόντος (π.χ. 5 τεμάχια) που αγοράζει κάποιος πελάτης σε κάποια μεταβλητή, τότε μπορούμε να εισάγουμε στην κονσόλα την ακόλουθη ανάθεση:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb65-1" title="1">x &lt;-<span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<p>H παραπάνω ανάθεση έχει ως αποτέλεσμα να μην εμφανίζει κάτι στην κονσόλα απλά έχει δημιουργηθεί ένα αντικείμενο με όνομα <code>x</code> που αποθηκεύει την τιμή <code>5</code>. Επίσης, αν θέλουμε να αποθηκεύσουμε το όνομα του προϊόντος που αγόραζε ο πελάτης (π.χ. <code>'books'</code>) καθώς και αν το φύλο του πελάτη είναι άνδρας (π.χ. υποθέτουμε ότι ο πελάτης μας είναι άνδρας και βάζουμε την τιμή <code>TRUE</code> ), τότε έχουμε τις ακόλουθες αναθέσεις τιμών:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb66-1" title="1">y &lt;-<span class="st"> &#39;books&#39;</span></a>
+<a class="sourceLine" id="cb66-2" title="2">z &lt;-<span class="st"> </span><span class="ot">TRUE</span></a></code></pre></div>
+<p>Tα παραπάνω παραδείγματα αναθέσεων που είδαμε είναι έγκυρες αλλά τα ονόματα των μεταβλητών που επιλέξαμε δεν είναι καλά και περιγραφικά. Έτσι, ένα όνομα μεταβλητής είναι περιγραφικό όταν το όνομα της αποτελείται από λέξη ή συνδυασμός λέξεων που διαχωρίζονται μεταξύ τους με κάτω παύλα (_) και να υπονοεί το αντικείμενο που αποθηκεύει. Για παράδειγμα, τα ονόματα μεταβλητών των προηγούμενων αναθέσεων που είδαμε θα μπορούσαν να είναι τα εξής:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb67-1" title="1">quantity &lt;-<span class="st"> </span><span class="dv">5</span></a>
+<a class="sourceLine" id="cb67-2" title="2">name_product &lt;-<span class="st"> &#39;books&#39;</span></a>
+<a class="sourceLine" id="cb67-3" title="3">gender_male &lt;-<span class="st"> </span><span class="ot">TRUE</span></a></code></pre></div>
+<p>Για να δούμε τα περιεχόμενα μιας μεταβλητής καλούμε το όνομα της μεταβλητής (ή αλλιώς του αντικειμένου). Για παράδειγμα, αν πληκτρολογήσουμε το παρακάτω όνομα στην κονσόλα:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb68-1" title="1">quantity</a></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<p>τότε μας επιστρέφει και εμφανίζει στην κονσόλα την τιμή <code>5</code>. Αν όμως πληκτρολογήσουμε κατά λάθος το παρακάτω όνομα με το πρώτο γράμμα να είναι κεφαλαίο, τότε έχουμε:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb70-1" title="1">Quantity</a></code></pre></div>
+<pre><code>## Error in eval(expr, envir, enclos): object &#39;Quantity&#39; not found</code></pre>
+<p>Σε αυτή την περίπτωση λαμβάνουμε ένα μήνυμα λάθους που λέει ότι δεν αναγνωρίζει ή δεν υπάρχει αντικείμενο με όνομα <code>Quantity</code>. Εδώ παρατηρούμε ότι η R είναι ευαίσθητη στην διάκριση πεζών – κεφαλαίων γραμμάτων. Συνεπώς τα ονόματα <code>quantity</code> και <code>Quantity</code> είναι διαφορετικά.</p>
+<p>Tέλος, η R μας επιτρέπει να κάνουμε υπολογισμούς με τα αντικείμενα μεταβλητών μέσω τελεστών ή/και συναρτήσεων. Με άλλα λόγια, μπορούμε να χρησιμοποιήσουμε μια μεταβλητή σε διάφορους υπολογισμούς. Για παράδειγμα, θέλουμε να υπολογίσουμε το κόστος αγοράς για τα πέντε προϊόντα που αγόρασε ο πελάτης αν η τιμή του τεμαχίου είναι 15.5 €. Σε αυτή την περίπτωση όπως έχουμε δει προηγουμένως, η ποσότητα των προϊόντων είναι αποθηκευμένη στην μεταβλητή <code>quantity</code> και δεν έχουμε παρά να πληκτρολογήσουμε την παρακάτω έκφραση:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb72-1" title="1">quantity <span class="op">*</span><span class="st"> </span><span class="fl">15.5</span></a></code></pre></div>
+<pre><code>## [1] 77.5</code></pre>
+<p>Πριν τον υπολογισμό της παραπάνω έκφρασης, η μεταβλητή <code>quantity</code> αξιολογείται και παίρνει την τιμή που είναι αποθηκευμένη τη τρέχουσα στιγμή, δηλαδή την τιμή <code>5</code>. Στην συνέχεια, εκτελείται η πράξη του πολλαπλασιασμού και παρατηρούμε ότι το κόστος αγοράς για τα πέντε προϊόντα είναι <code>77.5</code> €. Εναλλακτικά, θα μπορούσαμε να αποθηκεύσουμε την τιμή <code>15.5</code> € σε μια μεταβλητή <code>price</code>, δηλαδή,</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb74-1" title="1">price &lt;-<span class="st"> </span><span class="fl">15.5</span></a></code></pre></div>
+<p>και έπειτα να υπολογίσαμε το συνολικό κόστος αγοράς με την παρακάτω έκφραση:</p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb75-1" title="1">quantity <span class="op">*</span><span class="st"> </span>price</a></code></pre></div>
+<pre><code>## [1] 77.5</code></pre>
+<p>Eπίσης, θέλουμε να υπολογίσουμε το συνολικό κόστος αγοράς των προϊόντων μετά από μια έκπτωση <code>12%</code> και το αποτέλεσμα θέλουμε να αποθηκευτεί σε μια νέα μεταβλητή με όνομα <code>cost</code>. Για να γίνει αυτό, θα πρέπει πρώτα να υπολογίσουμε το αρχικό κόστος αγοράς των προϊόντων και να το αναθέσουμε σε μια μεταβλητή <code>original _cost</code>, δηλαδή,</p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb77-1" title="1">original_cost &lt;-<span class="st"> </span>quantity <span class="op">*</span><span class="st"> </span>price</a></code></pre></div>
+<p>Στην συνέχεια, να υπολογίσουμε το ποσό της έκπτωσης επί του αρχικού κόστους αγοράς και να το αφαιρέσουμε από το αρχικό κόστος αγοράς, δηλαδή,</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb78-1" title="1">cost &lt;-<span class="st"> </span>original_cost <span class="op">-</span><span class="st"> </span>(original_cost <span class="op">*</span><span class="st"> </span><span class="fl">0.12</span>)</a>
+<a class="sourceLine" id="cb78-2" title="2">cost</a></code></pre></div>
+<pre><code>## [1] 68.2</code></pre>
+<p>Το συνολικό κόστος αγοράς μετά από έκπτωση θα μπορούσε να υπολογιστεί ισοδύναμα ως μια έκφραση χωρίς την ενδιάμεση μεταβλητή <code>original_cost</code> που χρησιμοποιήσαμε προηγουμένως, δηλαδή θα μπορούσε να γραφεί ως εξής:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb80-1" title="1">cost &lt;-<span class="st"> </span>(quantity <span class="op">*</span><span class="st"> </span>price) <span class="op">-</span><span class="st"> </span>(quantity <span class="op">*</span><span class="st"> </span>price <span class="op">*</span><span class="st"> </span><span class="fl">0.12</span>)</a>
+<a class="sourceLine" id="cb80-2" title="2">cost</a></code></pre></div>
+<pre><code>## [1] 68.2</code></pre>
+<p>Σε αυτή την περίπτωση η έκφραση που δημιουργείται γίνεται πολύπλοκη και χρειάζεται προσοχή.</p>
+</div>
+<div id="σύνθετες-κλάσεις-αντικειμένων" class="section level2">
+<h2><span class="header-section-number">3.5</span> Σύνθετες Κλάσεις Αντικειμένων</h2>
+<p>Μέχρι τώρα είδαμε αντικείμενα που φιλοξενούν μόνο μια τιμή δεδομένων. H γλώσσα R υποστηρίζει σύνθετες κλάσεις αντικειμένων όπως τα <strong>διανύσματα</strong>, οι <strong>πίνακες</strong>, οι <strong>λίστες</strong> και τα <strong>πλαίσια δεδομένων</strong> τα οποία φιλοξενούν περισσότερες από μια τιμές δεδομένων.</p>
+<div id="διανύσματα" class="section level3">
+<h3><span class="header-section-number">3.5.1</span> Διανύσματα</h3>
+<p>Ένα <strong>διάνυσμα</strong> είναι μια συλλογή τιμών ίδιου τύπου. Οι τιμές αυτές μπορεί να είναι αριθμητικές, αλφαριθμητικές ή λογικές. Ένα διάνυσμα στην R δημιουργείται με την <strong>συνάρτηση c()</strong>. Για παράδειγμα, έχουμε τέσσερα ονόματα πελατών που αγόραζαν ένα προϊόν και θέλουμε να τα αποθηκεύουμε σε ένα διάνυσμα χαρακτήρων κειμένου με όνομα <code>names_persons</code> ως εξής:</p>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb82-1" title="1">names_persons &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Peter&quot;</span>, <span class="st">&quot;George&quot;</span>, <span class="st">&quot;Panos&quot;</span>, <span class="st">&quot;Helen&quot;</span>)</a>
+<a class="sourceLine" id="cb82-2" title="2">names_persons</a></code></pre></div>
+<pre><code>## [1] &quot;Peter&quot;  &quot;George&quot; &quot;Panos&quot;  &quot;Helen&quot;</code></pre>
+<p>Επίσης, για τους παραπάνω πελάτες θέλουμε να αποθηκεύσουμε τις αντίστοιχες ποσότητες προϊόντος που αγόραζαν σε ένα αριθμητικό διάνυσμα με όνομα <code>quantities</code>. Αυτό μπορεί να γίνει ως εξής:</p>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" title="1">quantities &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb84-2" title="2">quantities</a></code></pre></div>
+<pre><code>## [1] 10  5  1  4</code></pre>
+<p>Επιπλέον, για τους παραπάνω πελάτες θέλουμε να αποθηκεύσουμε τις αντίστοιχες λογικές τιμές για το αν οι αντίστοιχοι πελάτες είναι άνδρες σε ένα λογικό διάνυσμα με όνομα <code>gender_male</code>. Αυτό γίνεται ως εξής:</p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" title="1">gender_male &lt;-<span class="st"> </span><span class="kw">c</span>(T, T, T, F)</a>
+<a class="sourceLine" id="cb86-2" title="2">gender_male</a></code></pre></div>
+<pre><code>## [1]  TRUE  TRUE  TRUE FALSE</code></pre>
+<p>Μια από τις πράξεις που μπορούμε να κάνουμε στα διανύσματα είναι η <strong>προσπέλαση</strong> των στοιχείων τους. Έτσι, μπορούμε να προσπελάζουμε τα στοιχεία ενός διανύσματος με τις θέσεις τους που περικλείονται μέσα σε αγκύλες. Εδώ σημειώνουμε ότι το πρώτο στοιχείο του διανύσματος ξεκινάει με την θέση 1. Για παράδειγμα, για να προσπελάσουμε το όνομα και το φύλο του δεύτερου πελάτη, γράφουμε στην κονσόλα το όνομα του διανύσματος και μέσα σε αγκύλες την θέση 2, δηλαδή ως εξής:</p>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb88-1" title="1">names_persons[<span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] &quot;George&quot;</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" title="1">gender_male[<span class="dv">2</span>]</a></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Επίσης, μπορούμε να εκτελέσουμε μια σειρά άμεσων <strong>υπολογισμών</strong> στα διανύσματα μέσω τελεστών ή και συναρτήσεων. Για παράδειγμα, θέλουμε να υπολογίσουμε το κόστος αγοράς των προϊόντων για κάθε ένα από τους τέσσερις πελάτες αν η τιμή του προϊόντος είναι <code>5</code> €. Αυτό μπορεί να υπολογιστεί, γράφοντας στην κονσόλα την παρακάτω έκφραση:</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" title="1">quantities <span class="op">*</span><span class="st"> </span><span class="dv">5</span></a></code></pre></div>
+<pre><code>## [1] 50 25  5 20</code></pre>
+<p>H παραπάνω έκφραση όπως παρατηρούμε πολλαπλασιάζει την τιμη <code>5</code> με το κάθε στοιχείο του διανύσματος <code>quantities</code>. To αποτέλεσμα που προκύπτει είναι ένα αντικείμενο αριθμητικού διανύσματος που περιέχει τα κόστη αγοράς για τους τέσσερις πελάτες.</p>
+<p>Eπίσης, αν θέλουμε τα ονόματα των τεσσάρων πελατών να είναι όλα κεφαλαία τότε μπορούμε να χρησιμοποιήσουμε την συνάρτηση <code>toupper()</code> ως εξής:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb94-1" title="1"><span class="kw">toupper</span>(names_persons)</a></code></pre></div>
+<pre><code>## [1] &quot;PETER&quot;  &quot;GEORGE&quot; &quot;PANOS&quot;  &quot;HELEN&quot;</code></pre>
+<p>Μερικές φορές θέλουμε να συνοψίζουμε τις τιμές ενός διανύσματος σε μια μόνο τιμή. Για το σκοπό αυτό, η R διαθέτει στατιστικές συναρτήσεις όπως φαίνονται στον παρακάτω πίνακα.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Συνάρτηση</th>
+<th align="left">Περιγραφή</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">sum()</td>
+<td align="left">άθροισμα τιμών</td>
+</tr>
+<tr class="even">
+<td align="left">length()</td>
+<td align="left">πλήθος τιμών</td>
+</tr>
+<tr class="odd">
+<td align="left">min()</td>
+<td align="left">μικρότερη τιμή</td>
+</tr>
+<tr class="even">
+<td align="left">max()</td>
+<td align="left">μεγαλύτερη τιμή</td>
+</tr>
+<tr class="odd">
+<td align="left">mean()</td>
+<td align="left">μέση τιμή</td>
+</tr>
+<tr class="even">
+<td align="left">median()</td>
+<td align="left">διάμεση τιμή</td>
+</tr>
+<tr class="odd">
+<td align="left">sd()</td>
+<td align="left">τυπική απόκλιση</td>
+</tr>
+</tbody>
+</table>
+<p>Για παράδειγμα για να βρούμε την μέση και διάμεση ποσότητα που αγόραζαν οι τέσσερις πελάτες, εισάγουμε στην κονσόλα τις παρακάτω συναρτήσεις:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb96-1" title="1"><span class="kw">mean</span>(quantities)</a></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb98-1" title="1"><span class="kw">median</span>(quantities)</a></code></pre></div>
+<pre><code>## [1] 4.5</code></pre>
+<p>Από τα παραπάνω αποτελέσματα διαπιστώνουμε ότι η ποσότητα που αγόραζαν κατά μέσο όροι οι πελάτες είναι περίπου 5 τεμάχια.</p>
+<p>Tέλος, αν θέλαμε να υπολογίσουμε το ποσοστό των πελατών που είναι άνδρες, τότε χρησιμοποιούμε την συνάρτηση <code>mean()</code> ως εξής:</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb100-1" title="1"><span class="kw">mean</span>(gender_male)</a></code></pre></div>
+<pre><code>## [1] 0.75</code></pre>
+<p>Διαπιστώνουμε ότι το 75% των πελατών που αγόραζαν το προϊόν είναι άνδρες.</p>
+</div>
+<div id="πίνακες" class="section level3">
+<h3><span class="header-section-number">3.5.2</span> Πίνακες</h3>
+<p>Ένας <strong>πίνακας</strong> είναι μια συλλογή διανυσμάτων οργανωμένη σε γραμμές και στήλες.
+Οι τιμές του πίνακα πρέπει να είναι ιδίου τύπου δεδομένων. Ο πίνακας στην R δημιουργείται με την <strong>συνάρτηση matrix()</strong>. Για παράδειγμα, θέλουμε να δημιουργήσουμε ένα πίνακα με 4 γραμμές και 4 στήλες με ακέραιες τιμές από το 1 έως 16. Αυτό γίνεται ως εξής:</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb102-1" title="1">m &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">16</span>, <span class="dv">4</span>, <span class="dv">4</span>)</a>
+<a class="sourceLine" id="cb102-2" title="2">m</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    5    9   13
+## [2,]    2    6   10   14
+## [3,]    3    7   11   15
+## [4,]    4    8   12   16</code></pre>
+<p>Aπό την παραπάνω έξοδο παρατηρούμε ότι οι τιμές του πίνακα συμπληρώνονται κατά στήλες.</p>
+<p>Τα στοιχεία του πίνακα μπορούμε να τα προσπελάσουμε με την βοήθεια δύο δεικτών που περικλείονται μέσα σε αγκύλες. Ο πρώτος δείκτης δείχνει τη γραμμή του πίνακα και ο δεύτερος δείχνει τη στήλη του πίνακα. Για παράδειγμα, για να προσπελάσουμε το στοιχείο της 2ης γραμμής και 3ης στήλης του πίνακα <code>m</code>, εισάγουμε στην κονσόλα την παρακάτω έκφραση:</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb104-1" title="1">m[<span class="dv">2</span>,<span class="dv">3</span>]</a></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<p>Επίσης, μπορούμε να εκτελέσουμε υπολογισμούς πάνω τους πίνακες όπως στα διανύσματα. Για παράδειγμα, η παρακάτω πράξη</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb106-1" title="1">m <span class="op">+</span><span class="st"> </span><span class="dv">10</span></a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]   11   15   19   23
+## [2,]   12   16   20   24
+## [3,]   13   17   21   25
+## [4,]   14   18   22   26</code></pre>
+<p>προσθέτει όλα τα στοιχεία του πίνακα <code>m</code> με την τιμή 10. Επίσης, η ακόλουθη πράξη</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb108-1" title="1">m <span class="op">+</span><span class="st"> </span>m</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    2   10   18   26
+## [2,]    4   12   20   28
+## [3,]    6   14   22   30
+## [4,]    8   16   24   32</code></pre>
+<p>υπολογίζει το άθροισμα δύο πινάκων. Μπορούν να γίνουν παρόμοιες αριθμητικές πράξεις πινάκων όπως αφαίρεση, πολλαπλασιασμός, κ.λπ. Τέλος, οι συναρτήσεις <strong>rbind()</strong> και <strong>cbind()</strong> συνδυάζουν δύο πίνακες κατά γραμμές και στήλες αντίστοιχα. Για παράδειγμα, η παρακάτω συνάρτηση</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb110-1" title="1"><span class="kw">rbind</span>(m, m)</a></code></pre></div>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    5    9   13
+## [2,]    2    6   10   14
+## [3,]    3    7   11   15
+## [4,]    4    8   12   16
+## [5,]    1    5    9   13
+## [6,]    2    6   10   14
+## [7,]    3    7   11   15
+## [8,]    4    8   12   16</code></pre>
+<p>συνδυάζει δύο πίνακες <code>m</code> κατά γραμμές.</p>
+</div>
+<div id="πλαίσια-δεδομένων" class="section level3">
+<h3><span class="header-section-number">3.5.3</span> Πλαίσια Δεδομένων</h3>
+<p>Ένα <strong>πλαίσιο δεδομένων</strong> είναι τυπικά μια ορθογώνια διάταξη δεδομένων. Το πλαίσιο δεδομένων αποτελείται από στήλες, όπου κάθε στήλη του πλαισίου είναι ένα διάνυσμα ενός τύπου δεδομένων. Σε αντίθεση με τους πίνακες, οι στήλες μεταξύ τους μπορεί να έχουν διαφορετικό τύπο δεδομένων. Όμως, στα πλαίσια της ανάλυσης δεδομένων, κάθε γραμμή του πλαισίου αναπαριστά μια παρατήρηση και κάθε στήλη αναπαριστά μια μεταβλητή. Ένα πλαίσιο δεδομένων στην R δημιουργείται με την συνάρτηση
+<strong>data.frame()</strong>. Για παράδειγμα, παρακάτω ορίζουμε ένα πλαίσιο δεδομένων με όνομα <code>data_set</code> με βάση τα παραδείγματα διανυσμάτων που είδαμε προηγουμένως (δηλαδή, τα ονόματα των πελατών, τις ποσότητες που αγόραζαν οι πελάτες και το φύλο του πελάτη):</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb112-1" title="1">data_set &lt;-<span class="st"> </span><span class="kw">data.frame</span>(names_persons, quantities, gender_male)</a>
+<a class="sourceLine" id="cb112-2" title="2">data_set</a></code></pre></div>
+<pre><code>##   names_persons quantities gender_male
+## 1         Peter         10        TRUE
+## 2        George          5        TRUE
+## 3         Panos          1        TRUE
+## 4         Helen          4       FALSE</code></pre>
+<p>Για να προσπελάσουμε μια στήλη ενός πλαισίου δεδομένων χρησιμοποιούμε το τελεστή $ με την εξής μορφή:</p>
+<pre><code>όνομα_πλαίσιου$μεταβλητή</code></pre>
+<p>Για παράδειγμα, για να δούμε μόνο τις τιμές της μεταβλητής <code>quantities</code> του πλαισίου δεδομένων <code>data_set</code>, εισάγουμε την παρακάτω έκφραση στην κονσόλα:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb115-1" title="1">data_set<span class="op">$</span>quantities</a></code></pre></div>
+<pre><code>## [1] 10  5  1  4</code></pre>
+<p>Ορισμένες συναρτήσεις μπορούν να εφαρμοστούν στο αντικείμενο πλαίσιο δεδομένων, όπως οι συναρτήσεις <strong>str()</strong>, <strong>summary()</strong>, κ.λπ. Η συνάρτηση <strong>str()</strong> δίνει πληροφορίες για την δομή ενός πλαίσιου δεδομένων όπως φαίνονται παρακάτω:</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb117-1" title="1"><span class="kw">str</span>(data_set)</a></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    4 obs. of  3 variables:
+##  $ names_persons: chr  &quot;Peter&quot; &quot;George&quot; &quot;Panos&quot; &quot;Helen&quot;
+##  $ quantities   : num  10 5 1 4
+##  $ gender_male  : logi  TRUE TRUE TRUE FALSE</code></pre>
+<p>Τέλος, η συνάρτηση <strong>summary()</strong> παρέχει συνοπτικές στατιστικές πληροφορίες για όλες τις μεταβλητές του πλαισίου δεδομένων όπως φαίνονται παρακάτω:</p>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb119-1" title="1"><span class="kw">summary</span>(data_set)</a></code></pre></div>
+<pre><code>##  names_persons        quantities    gender_male    
+##  Length:4           Min.   : 1.00   Mode :logical  
+##  Class :character   1st Qu.: 3.25   FALSE:1        
+##  Mode  :character   Median : 4.50   TRUE :3        
+##                     Mean   : 5.00                  
+##                     3rd Qu.: 6.25                  
+##                     Max.   :10.00</code></pre>
+</div>
+</div>
+<div id="συναρτήσεις-γραφικών" class="section level2">
+<h2><span class="header-section-number">3.6</span> Συναρτήσεις Γραφικών</h2>
+<p>Τα γραφικά ή τα γραφήματα όπως είναι γνωστό έχουν σαν στόχο να εξετάσουμε τη κατανομή και τα χαρακτηριστικά των δεδομένων με ένα εύληπτο και πληροφοριακό τρόπο. Συνήθως, η δημιουργία γραφημάτων εξαρτάται από το τύπο των δεδομένων που θέλουμε να παρουσιάσουμε. Για παράδειγμα, για τα ποιοτικά δεδομένα χρησιμοποιούμε τα διαγράμματα <strong>ραβδόγραμμα</strong> και <strong>κυκλικό διάγραμμα</strong> για να δείξουμε την κατανομή ή την σύνθεση των δεδομένων. Από την άλλη πλευρά, για τα ποσοτικά δεδομένα χρησιμοποιούμε τo διάγραμμα <strong>ιστόγραμμα</strong> για να δείξουμε τη κατανομή μιας μεταβλητής και το <strong>διάγραμμα διασποράς</strong> για να διευρευνήσουμε τη σχέση μεταξύ δύο μεταβλητών.</p>
+<p>Στη συνέχεια, θα παρουσιάσουμε συναρτήσεις δημιουργίας των γραφημάτων που αναφέραμε προηγουμένως.</p>
+<div id="ραβδόγραμμα" class="section level3">
+<h3><span class="header-section-number">3.6.1</span> Ραβδόγραμμα</h3>
+<p>To <strong>ραβδόγραμμα</strong> χρησιμοποιείται για την παρουσίαση ποιοτικών δεδομένων και κυρίως να δείξουμε την επικρατούσα κατηγορία μεταξύ διαφόρων κατηγοριών. Για παράδειγμα, έχουμε μια παρέα τεσσάρων φίλων που το τελευταίο Σάββατο αγόραζαν μήλα από το παζάρι. Συγκεκριμένα, οι ποσότητες μήλων σε κιλά που αγόρασαν οι φίλοι είναι οι εξής:</p>
+<p>Γιάννης 3 κιλά μήλα</p>
+<p>Γιώργος 5 κιλά μήλα</p>
+<p>Χρύσα 6 κιλά μήλα</p>
+<p>Νίκος 2 κιλά μήλα</p>
+<p>Από το παράδειγμα αυτό θέλουμε να δούμε ποιο άτομo αγόραζε μήλα με τα περισσότερα κιλά. Αυτό μπορεί εύκολα να διαπιστωθεί με ένα ραβδόγραμμα.</p>
+<p>Για να δημιουργήσουμε ραβδόγραμμα στην R θα πρέπει πρώτα να αποθηκεύσουμε ή να εισάγουμε τα παραπάνω δεδομένα στην R (ή αλλιώς στην μνήμη του Η/Υ) και έπειτα να κατασκευάσουμε το διάγραμμα. Αυτό μπορεί να γίνει εύκολα με την βοήθεια του αρχείου R Script, ώστε το αρχείο να καταγράψουμε τις εντολές R για μεταγενέστερη χρήση. Επομένως, ακολουθούμε τα εξής:</p>
+<ol style="list-style-type: decimal">
+<li><p>Για να εισάγουμε κώδικα R, επιλέγουμε <strong>File</strong>, <strong>New File</strong> και <strong>R Script</strong>. Στην συνέχεια μας εμφανίζει ένα νέο αρχείο και μέσα σε αυτό θα εισάγουμε τις εντολές μας για τη δημιουργία διαγράμματος.</p></li>
+<li><p>Το δεύτερο βήμα είναι να αποθηκεύσουμε προσωρινά τα δεδομένα μας σε δύο μεταβλητές. Η μια μεταβλητή να αποθηκεύει τα ονόματα των φίλων και η δεύτερη μεταβλητή να αποθηκεύει τις ποσότητες των μήλων. Στο παράδειγμα μας, θα δημιουργήσουμε μια μεταβλητή με όνομα <code>amount</code> με περιεχόμενο ένα διάνυσμα που θα περιέχει τις τέσσερις ποσότητες. Επίσης, θα δημιουργήσουμε μια δεύτερη μεταβλητή με όνομα <code>onomata</code> με περιεχόμενο ένα διάνυσμα που θα περιέχει τα ονόματα των φίλων.</p></li>
+</ol>
+<p>Έτσι γράφουμε το παρακάτω κώδικα R:</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" title="1"><span class="co"># διάνυσμα που αποθηκεύει τα κιλά</span></a>
+<a class="sourceLine" id="cb121-2" title="2">amount =<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">2</span>) </a>
+<a class="sourceLine" id="cb121-3" title="3"></a>
+<a class="sourceLine" id="cb121-4" title="4"><span class="co"># διάνυσμα που αποθηκεύει τα ονόματα</span></a>
+<a class="sourceLine" id="cb121-5" title="5">onomata =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Γιάννης&quot;</span>, <span class="st">&quot;Γιώργος&quot;</span>, <span class="st">&quot;Χρύσα&quot;</span>, <span class="st">&quot;Νίκος&quot;</span>) </a></code></pre></div>
+<p>Σημείωση: Στο παραπάνω κώδικα έχουμε χρησιμοποιήσει το σύμβολο της δίεσης (#) και σημαίνει γραμμή σχολίων. Τα σχόλια μας επιτρέπει να γράφουμε επεξηγήσεις για κάθε γραμμή κώδικα και αυτά αγνοούται από την R.</p>
+<ol start="3" style="list-style-type: decimal">
+<li>Το τελευταίο βήμα είναι να δημιουργήσουμε το ραβδόγραμμα με τα παραπάνω δεδομένα και αυτό γίνεται με τη χρήση της συνάρτησης <strong>barplot()</strong> όπως φαίνεται παρακάτω:</li>
+</ol>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" title="1"> <span class="co"># δημιουργεί ραβδόγραμμα</span></a>
+<a class="sourceLine" id="cb122-2" title="2"><span class="kw">barplot</span>(amount, <span class="dt">names.arg =</span> onomata, <span class="dt">ylab =</span> <span class="st">&quot;Ποσότητα μήλων σε κιλά&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Κατανομή μήλων&quot;</span>)</a></code></pre></div>
+<p>Μέσα στις παρενθέσεις της συνάρτησης <strong>barplot()</strong> βάζουμε τα ορίσματα που διαχωρίζονται μεταξύ τους με κόμμα. Το πρώτο όρισμα βάζουμε τη μεταβλητή <code>amount</code> που περιέχει τις αριθμητικές τιμές. To δεύτερο όρισμα <code>names.arg</code> βάζουμε τη μεταβλητή <code>onomata</code> για να εμφανιστούν οι λεζάντες στο οριζόντιο άξονα του ραβδογράμματος. Το τρίτο όρισμα <code>ylab</code> βάζουμε μια λεζάντα - κειμένου για το κατακόρυφο άξονα του ραβδογράμματος. Τέλος, το όρισμα <code>main</code> τοποθετούμε το τίτλο του διαγράμματος.</p>
+<p>Συνεπώς, ο πλήρες κώδικας R για την κατασκευή ραβδογράμματος φαίνεται παρακάτω και αμέσως μετά παρουσιάζεται το ραβδόγραμμα από την εκτέλεση του κώδικα:</p>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb123-1" title="1"><span class="co"># διάνυσμα που αποθηκεύει τα κιλά</span></a>
+<a class="sourceLine" id="cb123-2" title="2">amount =<span class="st"> </span><span class="kw">c</span>(<span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">2</span>)</a>
+<a class="sourceLine" id="cb123-3" title="3"></a>
+<a class="sourceLine" id="cb123-4" title="4"><span class="co"># διάνυσμα που αποθηκεύει τα ονόματα</span></a>
+<a class="sourceLine" id="cb123-5" title="5">onomata =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Γιάννης&quot;</span>, <span class="st">&quot;Γιώργος&quot;</span>, <span class="st">&quot;Χρύσα&quot;</span>, <span class="st">&quot;Νίκος&quot;</span>)</a>
+<a class="sourceLine" id="cb123-6" title="6"></a>
+<a class="sourceLine" id="cb123-7" title="7"><span class="co"># δημιουργεί ραβδόγραμμα</span></a>
+<a class="sourceLine" id="cb123-8" title="8"><span class="kw">barplot</span>(amount, <span class="dt">names.arg =</span> onomata, <span class="dt">ylab =</span> <span class="st">&quot;Ποσότητα μήλων σε κιλά&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Κατανομή μήλων&quot;</span>) </a></code></pre></div>
+<p><img src="BookR_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
+<p>Από το ραβδόγραμμα παρατηρούμε εύκολα ότι η Χρύσα της παρέας αγόραζε μήλα με τα περισσότερα κιλά και μετά ακολουθούν ο Γιώργος, ο Γιάννης και τελευταίος ο Νίκος.</p>
+</div>
+<div id="κυκλικό-διάγραμμα-ή-πίτα" class="section level3">
+<h3><span class="header-section-number">3.6.2</span> Κυκλικό διάγραμμα ή Πίτα</h3>
+<p>To <strong>κυκλικό διάγραμμα</strong> χρησιμοποιείται κυρίως για ποιοτικά δεδομένα και να παρουσιάσουμε τη σύνθεση των δεδομένων. Για παράδειγμα, μια οικογένεια κάνει τα παρακάτω μηνιαία έξοδα:</p>
+<p>Τρόφιμα 640 ευρώ</p>
+<p>Ρούχα 200 ευρώ</p>
+<p>Ενοίκιο 350 ευρώ</p>
+<p>Διάφορα 170 Ευρώ</p>
+<p>Από αυτό το παράδειγμα θέλουμε να δείξουμε τη σύνθεση των μηνιαίων εξόδων της οικογένειας και αυτό γίνεται εύκολα με το κυκλικό διάγραμμα.</p>
+<p>Για να δημιουργήσουμε κυκλικό διάγραμμα στην R ακολοθούμε παρόμοια λογική όπως κάναμε στο ραβδόγραμμα. Με άλλα λόγια, θα πρέπει πρώτα να αποθηκεύσουμε ή να εισάγουμε τα παραπάνω δεδομένα στην R και έπειτα να κατασκευάσουμε το διάγραμμα. Αυτό μπορεί να γίνει εύκολα με την βοήθεια του αρχείου R Script για την εισαγωγή κώδικα R. Επομένως, ακολουθούμε τα εξής:</p>
+<ol style="list-style-type: decimal">
+<li><p>Πρώτα εισάγουμε κώδικα R, επιλέγοντας <strong>File</strong>, <strong>New File</strong> και <strong>R Script</strong>. Στην συνέχεια μας εμφανίζει ένα νέο αρχείο και μέσα σε αυτό θα εισάγουμε τις εντολές μας για τη δημιουργία διαγράμματος.</p></li>
+<li><p>Το δεύτερο βήμα είναι να αποθηκεύσουμε προσωρινά τα δεδομένα μας σε δύο μεταβλητές. Η μια μεταβλητή να αποθηκεύει τα είδη των δαπανών/εξόδων και η δεύτερη μεταβλητή να αποθηκεύει τα ποσά των δαπανών. Συγκεκριμένα, θα δημιουργήσουμε μια μεταβλητή με όνομα <code>eidh</code> με περιεχόμενο ένα διάνυσμα που θα περιέχει τα είδη των δαπανών. Επίσης, θα δημιουργήσουμε μια δεύτερη μεταβλητή με όνομα <code>posa</code> με περιεχόμενο ένα διάνυσμα που θα περιέχει τα αντίστοιχα ποσά των δαπανών.</p></li>
+</ol>
+<p>Έτσι γράφουμε το παρακάτω κώδικα R:</p>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb124-1" title="1"><span class="co"># διάνυσμα που αποθηκεύει τα είδη των δαπανών</span></a>
+<a class="sourceLine" id="cb124-2" title="2">eidh =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Τρόφιμα&quot;</span>, <span class="st">&quot;Ρούχα&quot;</span>, <span class="st">&quot;Ενοίκιο&quot;</span>, <span class="st">&quot;Διάφορα&quot;</span>) </a>
+<a class="sourceLine" id="cb124-3" title="3"></a>
+<a class="sourceLine" id="cb124-4" title="4"><span class="co"># διάνυσμα που αποθηκεύει τα ποσά των δαπανών </span></a>
+<a class="sourceLine" id="cb124-5" title="5">posa =<span class="st"> </span><span class="kw">c</span>(<span class="dv">640</span>, <span class="dv">200</span>, <span class="dv">350</span>, <span class="dv">170</span>) </a></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Το τελευταίο βήμα είναι να δημιουργήσουμε το κυκλικό διάγραμμα με τα παραπάνω δεδομένα και αυτό γίνεται με τη χρήση της συνάρτησης <strong>pie()</strong> όπως φαίνεται παρακάτω:</li>
+</ol>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb125-1" title="1"><span class="co"># δημιουργεί κυκλικό διάγραμμα</span></a>
+<a class="sourceLine" id="cb125-2" title="2"><span class="kw">pie</span>(posa, <span class="dt">labels =</span> eidh, <span class="dt">main =</span> <span class="st">&quot; Μηνιαία έξοδα σε ευρώ&quot;</span>) </a></code></pre></div>
+<p>Μέσα στις παρενθέσεις της συνάρτησης <strong>pie()</strong> βάζουμε τα ορίσματα που διαχωρίζονται μεταξύ τους με κόμμα. Το πρώτο όρισμα βάζουμε τη μεταβλητή <code>posa</code> που περιέχει τα ποσά και προσδιορίζουν τα μέγεθη κάθε φέτας του διαγράμματος. To δεύτερο όρισμα <code>labels</code> βάζουμε τη μεταβλητή <code>eidh</code> για να εμφανιστούν οι λεζάντες ή τα είδη δαπανών που αντιστοιχούν σε κάθε φέτα του διαγράμματος. Τέλος, το όρισμα <code>main</code> τοποθετούμε το τίτλο του διαγράμματος.</p>
+<p>Συνεπώς, ο πλήρες κώδικας R για την κατασκευή κυκλικού διαγράμματος φαίνεται παρακάτω και αμέσως μετά παρουσιάζεται το κυκλικό διάγραμμα από την εκτέλεση του κώδικα:</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" title="1"><span class="co"># διάνυσμα που αποθηκεύει τα είδη των δαπανών</span></a>
+<a class="sourceLine" id="cb126-2" title="2">eidh =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Τρόφιμα&quot;</span>, <span class="st">&quot;Ρούχα&quot;</span>, <span class="st">&quot;Ενοίκιο&quot;</span>, <span class="st">&quot;Διάφορα&quot;</span>) </a>
+<a class="sourceLine" id="cb126-3" title="3"></a>
+<a class="sourceLine" id="cb126-4" title="4"><span class="co"># διάνυσμα που αποθηκεύει τα ποσά των δαπανών </span></a>
+<a class="sourceLine" id="cb126-5" title="5">posa =<span class="st"> </span><span class="kw">c</span>(<span class="dv">640</span>, <span class="dv">200</span>, <span class="dv">350</span>, <span class="dv">170</span>)</a>
+<a class="sourceLine" id="cb126-6" title="6"></a>
+<a class="sourceLine" id="cb126-7" title="7"><span class="co"># δημιουργεί κυκλικό διάγραμμα</span></a>
+<a class="sourceLine" id="cb126-8" title="8"><span class="kw">pie</span>(posa, <span class="dt">labels =</span> eidh, <span class="dt">main =</span> <span class="st">&quot; Μηνιαία έξοδα σε ευρώ&quot;</span>) </a></code></pre></div>
+<p><img src="BookR_files/figure-html/unnamed-chunk-44-1.png" width="672" /></p>
+<p>Από το κυκλικό διάγραμμα παρατηρούμε εύκολα ότι η κατηγορία τρόφιμα λαμβάνει τα περισσότερα έξοδα της οικογένειας σε σχέση με τις υπόλοιπες κατηγορίες δαπανών.</p>
+</div>
+<div id="ιστόγραμμα" class="section level3">
+<h3><span class="header-section-number">3.6.3</span> Ιστόγραμμα</h3>
+<p>To <strong>ιστόγραμμα</strong> χρησιμοποιείται για να απεικονίζει την κατανομή ποσοτικών δεδομένων. Συγκεκριμένα, το ιστόγραμμα χωρίζει τις παρατηρήσεις ή τα δεδομένα σε κλάσεις ίσου πλάτους και σε κάθε κλάση απεικονίζει την συχνότητα των παρατηρήσεων. Από το ιστόγραμμα μπορούμε να δούμε διάφορα χαρακτηριστικά όπως το κεντρικό σημείο στο οποίο συγκεντρώνονται οι περισσότερες παρατηρήσεις, το εύρος των δεδομένων καθώς και το σχήμα της κατανομής δηλαδή αν τα δεδομένα κατανέμονται με συμμετρικό τρόπο γύρω από κεντρικό σημείο ή κατανέμονται ασύμμετρα προς τα δεξιά ή τα αριστερά.</p>
+<p>Για παράδειγμα, ρωτήσαμε σε 20 φοιτητές για τα μηνιαία έξοδα τους και είχαμε τις εξής τιμές:</p>
+<p>1000, 580, 520, 350, 620, 800, 120, 600, 550, 420, 470, 200, 560, 480, 1000, 600, 1150, 800, 260, 650</p>
+<p>Από τα παραπάνω δεδομένα θέλουμε να μάθουμε πως κατανέμονται τα μηνιαία έξοδα των φοιτητών και αυτό μπορεί να γίνει εύκολα με τη δημιουργία ιστογράμματος. Αυτό μπορεί να γίνει με την βοήθεια του αρχείου R Script για την εισαγωγή κώδικα R ως εξής:</p>
+<ol style="list-style-type: decimal">
+<li><p>Πρώτα εισάγουμε κώδικα R, επιλέγοντας <strong>File</strong>, <strong>New File</strong> και <strong>R Script</strong>. Στην συνέχεια μας εμφανίζει ένα νέο αρχείο και μέσα σε αυτό θα εισάγουμε τις εντολές μας για τη δημιουργία διαγράμματος.</p></li>
+<li><p>Το δεύτερο βήμα είναι να αποθηκεύσουμε προσωρινά τα μηνιαία έξοδα των 20 φοιτητών σε μια μεταβλητή διανύσματος με όνομα <code>exoda</code>. Έτσι γράφουμε το παρακάτω κώδικα R:</p></li>
+</ol>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" title="1"><span class="co"># διάνυσμα που αποθηκεύει τα μηνιαία έξοδα των 20 φοιτητών</span></a>
+<a class="sourceLine" id="cb127-2" title="2">exoda =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1000</span>, <span class="dv">580</span>, <span class="dv">520</span>, <span class="dv">350</span>, <span class="dv">620</span>, <span class="dv">800</span>, <span class="dv">120</span>, <span class="dv">600</span>, <span class="dv">550</span>, <span class="dv">420</span>, <span class="dv">470</span>, <span class="dv">200</span>, <span class="dv">560</span>, <span class="dv">480</span>, <span class="dv">1000</span>, <span class="dv">600</span>, <span class="dv">1150</span>, <span class="dv">800</span>, <span class="dv">260</span>, <span class="dv">650</span>) </a></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Το τελευταίο βήμα είναι να δημιουργήσουμε το ιστόγραμμα με τα παραπάνω δεδομένα και αυτό γίνεται με τη χρήση της συνάρτησης <strong>hist()</strong> όπως φαίνεται παρακάτω:</li>
+</ol>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb128-1" title="1"><span class="co"># δημιουργεί ιστόγραμμα</span></a>
+<a class="sourceLine" id="cb128-2" title="2"><span class="kw">hist</span>(exoda, <span class="dt">main =</span> <span class="st">&quot;Κατανομή εξόδων για 20 φοιτητές&quot;</span>) </a></code></pre></div>
+<p>Μέσα στις παρενθέσεις της συνάρτησης <strong>hist()</strong> βάζουμε τα ορίσματα που διαχωρίζονται μεταξύ τους με κόμμα. Το πρώτο όρισμα βάζουμε τη μεταβλητή <code>exoda</code> που περιέχει τα μηνιαία έξοδα των 20 φοιτητών. Τέλος, εισάγουμε το όρισμα <code>main</code> όπου τοποθετούμε το τίτλο του διαγράμματος.</p>
+<p>Συνεπώς, ο πλήρες κώδικας R για την κατασκευή ιστογράμματος φαίνεται παρακάτω και αμέσως μετά παρουσιάζεται το ιστόγραμμα από την εκτέλεση του κώδικα:</p>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb129-1" title="1"><span class="co"># διάνυσμα που αποθηκεύει τα μηνιαία έξοδα των 20 φοιτητών</span></a>
+<a class="sourceLine" id="cb129-2" title="2">exoda =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1000</span>, <span class="dv">580</span>, <span class="dv">520</span>, <span class="dv">350</span>, <span class="dv">620</span>, <span class="dv">800</span>, <span class="dv">120</span>, <span class="dv">600</span>, <span class="dv">550</span>, <span class="dv">420</span>, <span class="dv">470</span>, <span class="dv">200</span>, <span class="dv">560</span>, <span class="dv">480</span>, <span class="dv">1000</span>, <span class="dv">600</span>, <span class="dv">1150</span>, <span class="dv">800</span>, <span class="dv">260</span>, <span class="dv">650</span>) </a>
+<a class="sourceLine" id="cb129-3" title="3"></a>
+<a class="sourceLine" id="cb129-4" title="4"><span class="co"># δημιουργεί ιστόγραμμα</span></a>
+<a class="sourceLine" id="cb129-5" title="5"><span class="kw">hist</span>(exoda, <span class="dt">main =</span> <span class="st">&quot;Κατανομή εξόδων για 20 φοιτητές&quot;</span>) </a></code></pre></div>
+<p><img src="BookR_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p>Από το ιστόγραμμα παρατηρούμε την κατανομή των μηνιαίων εξόδων για 20 φοιτητές. Συγκεκριμένα, τα μηνιαία έξοδα των φοιτητών συγκεντρώνονται περισσότερο γύρω από το διάστημα μεταξύ 500 και 600 Ευρώ περίπου. Η διασπορά της κατανομής κυμαίνεται μεταξύ των τιμών 0 και 1200 Ευρώ. Τέλος, η κατανομή παρουσιάζει ασυμμετρία προς τα δεξιά καθώς οι περισσότερες τιμές μηνιαίων εξόδων βρίσκονται αριστερά.</p>
+</div>
+<div id="διάγραμμα-διασποράς" class="section level3">
+<h3><span class="header-section-number">3.6.4</span> Διάγραμμα διασποράς</h3>
+<p>To <strong>διάγραμμα διασποράς</strong> απεικονίζει την σχέση μεταξύ δύο ποσοτικών μεταβλητών. Για παράδειγμα, ρωτήσαμε 10 μαθητές ενός σχολείου για τους βαθμούς σε δύο μαθήματα: Μαθηματικά και Νέα Ελληνικά και οι εξής:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Μαθητής</th>
+<th>Μαθηματικά</th>
+<th>Νέα Ελληνικά</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>18</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>10</td>
+<td>17</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>12</td>
+<td>16</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>19</td>
+<td>15</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>18</td>
+<td>13</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>17</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>16</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>09</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>13</td>
+<td>15</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>17</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<p>Από τα παραπάνω δεδομένα, θέλουμε να διερευνήσουμε τη σχέση που συνδέει μεταξύ τους βαθμούς των μαθηματικών και τους βαθμούς των Νέων Ελληνικών. Αυτό μπορεί να γίνει εύκολα με το διάγραμμα διασποράς. Αυτό γίνεται με την εισαγωγή κώδικα R ως εξής:</p>
+<ol style="list-style-type: decimal">
+<li><p>Πρώτα εισάγουμε κώδικα R, επιλέγοντας <strong>File</strong>, <strong>New File</strong> και <strong>R Script</strong>. Στην συνέχεια μας εμφανίζει ένα νέο αρχείο και μέσα σε αυτό θα εισάγουμε τις εντολές μας για τη δημιουργία διαγράμματος.</p></li>
+<li><p>Το δεύτερο βήμα είναι να αποθηκεύσουμε προσωρινά τους βαθμούς των μαθηματικών και των Νέων Ελληνικών για τους 10 μαθητές σε δύο μεταβλητές διανυσμάτων με ονόματα <code>maths</code> και <code>lang</code>, αντίστοιχα. Έτσι γράφουμε το παρακάτω κώδικα R:</p></li>
+</ol>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb130-1" title="1"><span class="co"># διανύσματα που αποθηκεύει τους βαθμούς των μαθηματικών και Νέων Ελληνικών</span></a>
+<a class="sourceLine" id="cb130-2" title="2">maths =<span class="st"> </span><span class="kw">c</span>(<span class="dv">18</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">19</span>, <span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">16</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">17</span>)</a>
+<a class="sourceLine" id="cb130-3" title="3">lang =<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">16</span>, <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">15</span>, <span class="dv">12</span>) </a></code></pre></div>
+<ol start="3" style="list-style-type: decimal">
+<li>Το τελευταίο βήμα είναι να δημιουργήσουμε το διάγραμμα διασποράς με τα παραπάνω δεδομένα και αυτό γίνεται με τη χρήση της συνάρτησης <strong>plot()</strong> όπως φαίνεται παρακάτω:</li>
+</ol>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb131-1" title="1"><span class="co"># δημιουργεί διάγραμμα διασποράς</span></a>
+<a class="sourceLine" id="cb131-2" title="2"><span class="kw">plot</span>(maths, lang, <span class="dt">main =</span> <span class="st">&quot;Σχέση μεταξύ Μαθηματικών και Νέων Ελληνικών&quot;</span>) </a></code></pre></div>
+<p>Μέσα στις παρενθέσεις της συνάρτησης <strong>plot()</strong> βάζουμε τα ορίσματα που διαχωρίζονται μεταξύ τους με κόμμα. Το πρώτο όρισμα βάζουμε τη μεταβλητή <code>maths</code> που περιέχει τους βαθμούς των μαθηματικών που αναπαρίστανται στον οριζόντιο άξονα. Το δεύτερο όρισμα βάζουμε τη μεταβλητή <code>lang</code> που περιέχει τους βαθμούς των Νέων Ελληνικών που αναπαρίστανται στο κατακόρυφο άξονα. Τέλος, εισάγουμε το όρισμα <code>main</code> όπου τοποθετούμε το τίτλο του διαγράμματος.</p>
+<p>Συνεπώς, ο πλήρες κώδικας R για την κατασκευή διαγράμματος διασποράς φαίνεται παρακάτω και αμέσως μετά παρουσιάζεται το διάγραμμα διασποράς από την εκτέλεση του κώδικα:</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb132-1" title="1"><span class="co"># διανύσματα που αποθηκεύει τους βαθμούς των μαθηματικών και Νέων Ελληνικών</span></a>
+<a class="sourceLine" id="cb132-2" title="2">maths =<span class="st"> </span><span class="kw">c</span>(<span class="dv">18</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">19</span>, <span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">16</span>, <span class="dv">9</span>, <span class="dv">13</span>, <span class="dv">17</span>)</a>
+<a class="sourceLine" id="cb132-3" title="3">lang =<span class="st"> </span><span class="kw">c</span>(<span class="dv">15</span>, <span class="dv">17</span>, <span class="dv">16</span>, <span class="dv">15</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">15</span>, <span class="dv">12</span>)</a>
+<a class="sourceLine" id="cb132-4" title="4"></a>
+<a class="sourceLine" id="cb132-5" title="5"><span class="co"># δημιουργεί διάγραμμα διασποράς</span></a>
+<a class="sourceLine" id="cb132-6" title="6"><span class="kw">plot</span>(maths, lang, <span class="dt">main =</span> <span class="st">&quot;Σχέση μεταξύ Μαθηματικών και Νέων Ελληνικών&quot;</span>) </a></code></pre></div>
+<p><img src="BookR_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p>Από το διάγραμμα διασποράς διαπιστώνουμε ότι υπάρχει μια αρνητική σχέση μεταξύ των μεταβλητών <code>maths</code> και <code>lang</code>. Αυτό σημαίνει ότι όσοι υψηλότεροι είναι οι βαθμοί των Μαθηματικών τόσο χαμηλότεροι είναι οι βαθμοί των Νέων Ελληνικών. Αυτό θεωρείται ένα λογικό αποτέλεσμα.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["BookR.pdf", "BookR.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
